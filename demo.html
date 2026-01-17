@@ -37,150 +37,177 @@
             opacity: 0.9;
         }
         .content {
-            padding: 40px;
+            padding: 30px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1fr 2fr;
+            gap: 25px;
         }
         .problem-panel {
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
             color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(255,107,107,0.3);
         }
         .solution-panel {
             background: linear-gradient(135deg, #00d2d3 0%, #54a0ff 100%);
             color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,210,211,0.3);
         }
         .panel h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 1.6em;
+            margin-bottom: 15px;
             text-align: center;
         }
         .problem-text {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
         .requirements {
             background: rgba(255,255,255,0.2);
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin-bottom: 25px;
         }
         .requirements ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .requirements li {
-            padding: 8px 0;
+            padding: 6px 0;
             font-weight: 500;
+            font-size: 0.95em;
         }
         .requirements li:before {
             content: "✅";
-            margin-right: 10px;
+            margin-right: 8px;
         }
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
         .stat-box {
             background: rgba(255,255,255,0.2);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 15px;
+            border-radius: 8px;
             text-align: center;
         }
         .stat-number {
-            font-size: 2.5em;
+            font-size: 2em;
             font-weight: bold;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         .stat-label {
-            font-size: 0.9em;
+            font-size: 0.8em;
             opacity: 0.9;
         }
-        .workflow {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 30px;
+        .workflow-diagram {
+            background: rgba(255,255,255,0.95);
             border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(245,87,108,0.3);
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
         }
-        .workflow h3 {
-            text-align: center;
-            font-size: 1.6em;
-            margin-bottom: 20px;
-        }
-        .workflow-steps {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        .step {
-            background: rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .step-number {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #fff;
-            background: rgba(255,255,255,0.3);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: inline-flex;
+        .workflow-nodes {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
+            position: relative;
         }
-        .results-panel {
+        .workflow-node {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+        }
+        .workflow-node h4 {
+            margin: 0 0 8px 0;
+            font-size: 1em;
+        }
+        .workflow-node p {
+            margin: 0;
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: #667eea;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .arrow:nth-child(2) { left: 25%; }
+        .arrow:nth-child(3) { left: 75%; }
+        .results-compact {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(79,172,254,0.3);
-        }
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            padding: 20px;
+            border-radius: 12px;
             margin-top: 20px;
         }
-        .result-box {
-            background: rgba(255,255,255,0.2);
-            padding: 20px;
-            border-radius: 10px;
+        .results-compact h4 {
             text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .results-stats {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+        }
+        .result-item {
+            text-align: center;
+            flex: 1;
         }
         .result-number {
-            font-size: 2.2em;
+            font-size: 1.8em;
             font-weight: bold;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         .result-label {
-            font-size: 0.9em;
+            font-size: 0.75em;
             opacity: 0.9;
         }
-        .code-demo {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 20px;
+        .system-info {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
             border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            margin-top: 20px;
-            overflow-x: auto;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .system-info h5 {
+            margin: 0 0 10px 0;
+            color: #667eea;
+            font-size: 1em;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tech-item {
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.8em;
+            font-weight: 500;
         }
         .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -299,55 +326,67 @@
             <div class="solution-panel">
                 <h2>🎯 Наше Решение</h2>
 
-                <div class="workflow">
-                    <h3>⚡ Как Работает Система</h3>
-                    <div class="workflow-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <strong>Сканирует файл</strong><br>
-                            Собирает уже заполненные цены
+                <div class="workflow-diagram">
+                    <h3 style="text-align: center; margin-bottom: 20px; color: #333;">⚡ Визуальный Workflow Системы</h3>
+                    <div class="workflow-nodes">
+                        <div class="workflow-node">
+                            <h4>📄 Excel Файл</h4>
+                            <p>15,000+ строк<br>50+ листов<br>частично заполнен</p>
                         </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <strong>Создает каталог</strong><br>
-                            {"Цемент М400": (5.50, 2.00), ...}
+                        <span class="arrow">→</span>
+                        <div class="workflow-node">
+                            <h4>🔍 Сканер</h4>
+                            <p>Читает все листы<br>собирает заполненные цены<br>создает локальный каталог</p>
                         </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <strong>Копирует значения</strong><br>
-                            Автоматически разносит на все вхождения
+                        <span class="arrow">→</span>
+                        <div class="workflow-node">
+                            <h4>🗄️ База Данных</h4>
+                            <p>Материалы + цены<br>История изменений<br>Справочники заказчиков</p>
                         </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <strong>Генерирует отчет</strong><br>
-                            Статистика и проблемные позиции
+                        <span class="arrow">→</span>
+                        <div class="workflow-node">
+                            <h4>⚙️ Процессор</h4>
+                            <p>Заполняет пустые ячейки<br>копирует значения<br>проверяет справочники</p>
+                        </div>
+                        <span class="arrow">→</span>
+                        <div class="workflow-node">
+                            <h4>📊 Результат</h4>
+                            <p>Автоматически заполненный Excel<br>643 из 1000 позиций<br>отчет о проблемах</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="results-panel">
-                    <h3>📊 Результаты Тестирования</h3>
-                    <div class="results-grid">
-                        <div class="result-box">
+                <div class="results-compact">
+                    <h4>📊 Результаты Тестирования</h4>
+                    <div class="results-stats">
+                        <div class="result-item">
                             <span class="result-number">553</span>
-                            <span class="result-label">заполнено из локальных данных</span>
+                            <span class="result-label">из локальных данных</span>
                         </div>
-                        <div class="result-box">
+                        <div class="result-item">
                             <span class="result-number">90</span>
-                            <span class="result-label">заполнено из справочника</span>
+                            <span class="result-label">из справочника</span>
                         </div>
-                        <div class="result-box">
+                        <div class="result-item">
                             <span class="result-number">2 сек</span>
-                            <span class="result-label">обработка 1000 строк</span>
+                            <span class="result-label">на 1000 строк</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="code-demo">
-# Быстрый старт
-pip install openpyxl pandas requests beautifulsoup4
-python fill_prices.py ваша_смета.xlsx
-# Результат: ваша_смета_filled.xlsx
+                <div class="system-info">
+                    <h5>🔧 Техническая Информация</h5>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python 3.6+</span>
+                        <span class="tech-item">SQLite Database</span>
+                        <span class="tech-item">OpenPyXL</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">BeautifulSoup4</span>
+                        <span class="tech-item">Requests</span>
                     </div>
+                    <p style="margin-top: 10px; font-size: 0.85em; color: #666;">
+                        <strong>Архитектура:</strong> Модульная система с поддержкой множественных заказчиков, истории цен, импорта прайсов и веб-скрапинга
+                    </p>
                 </div>
             </div>
         </div>
