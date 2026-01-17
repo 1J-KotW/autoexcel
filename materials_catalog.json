@@ -11,7 +11,19 @@
     "name": "Песок речной",
     "unit": "м³",
     "price": 800.00,
-    "labor_cost": 150.00
+    "labor_cost": 150.00,
+    "category": "Строительные материалы",
+    "active": true,
+    "default_vendor_id": null,
+    "aliases": ["Песок речной мытый", "Песок строительный"],
+    "price_history": [
+      {
+        "price": 800.00,
+        "price_date": "2026-01-17",
+        "source_type": "manual",
+        "source_name": "Базовая цена"
+      }
+    ]
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440002",
